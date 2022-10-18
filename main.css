@@ -1,0 +1,532 @@
+@font-face {
+    font-family: oneDay;
+    src: url(./assets/fonts/ONEDAY.ttf);
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* body */
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: "Arial";
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.subcontainer {
+    width: 100%
+}
+
+.navbar {
+    width: 100%;
+}
+
+.head_mobile {
+    display: none;
+}
+
+.main {
+    background-color: #141414;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.responsive {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.titre,
+.route_name {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-family: "Cabinet Grotesk";
+    letter-spacing: 1px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.titre,
+#equipe,
+#tournois,
+#contact {
+    color: white;
+}
+
+#burger,
+#cross {
+    align-self: center;
+    display: none;
+}
+
+.space {
+    width: 250px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    width: 4vw;
+    cursor: pointer;
+}
+
+#routes {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.route {
+    width: 180px;
+    height: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.route_name {
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    background-image: linear-gradient(#d99a5a, #d99a5a);
+    background-size: 0% 0.1em;
+    background-position-x: 100%;
+    background-position-y: 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out, font-size 0.2s;
+}
+
+.route_name:hover,
+.route_name:focus,
+.route_name:active {
+    background-size: 100% 0.1em;
+    background-position-x: 0%;
+    font-size: 25px;
+}
+
+#accueil {
+    color: #0096FF;
+}
+
+.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.hide {
+    display: none;
+}
+
+.foreground {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#myVideo {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+    clip-path: polygon(0% 0%,
+            100% 0%,
+            100% 50%,
+            50% 85%,
+            0% 50%);
+}
+
+video {
+    filter: brightness(50%);
+}
+
+#logo_accueil {
+    z-index: 2;
+    width: 35vw;
+}
+
+.titres_accueil {
+    z-index: 2;
+    font-weight: bold;
+    font-family: oneDay;
+    color: white;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title_accueil {
+    font-size: 50px;
+    text-align: center;
+}
+
+.a_propos {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+#illustration_a_propos {
+    width: 50vw;
+}
+
+.right {
+    width: 35vw;
+    margin-right: 25px;
+}
+
+.titre_partie {
+    font-family: "Cabinet Grotesk";
+    font-size: 45px;
+}
+
+.titre_droite {
+    text-align: right;
+}
+
+#text_a_propos {
+    font-size: 25px;
+    font-family: "Arial";
+    text-align: end;
+}
+
+.slideLeft {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.slideRight {
+    animation: 1s ease-out 0s 1 slideInFromRight;
+}
+
+.slideDisplay {
+    transition: opacity 1s ease-in-out;
+}
+
+.equipe {
+    opacity: 0;
+}
+
+.redirects {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.categorie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.equipe_img {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 25px;
+}
+
+.membres {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.profile_picture {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 360px;
+}
+
+.profile_picture_palmares {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 360px;
+}
+
+.text_player {
+    text-align: center;
+    font-size: 25px;
+}
+
+.joueur {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categorie,
+.link {
+    cursor: pointer;
+}
+
+.link {
+    border-radius: 360px;
+    border: 5px solid red;
+}
+
+.pseudo {
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+.all_palmares {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.palmares {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.palmares_titre {
+    justify-self: center;
+}
+
+.players {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.and {
+    align-self: center;
+}
+
+.realisation {
+    font-size: 20px;
+}
+
+.profile_picture_contact {
+    width: 5vw;
+    height: 5vw;
+}
+
+#contact_body {
+    height: 100%;
+}
+
+.contact_container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.contact {
+    align-self: center;
+}
+
+a,
+a:visited {
+    color: inherit;
+    text-decoration: none;
+    color: blue;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text_contact {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.button {
+    text-align: center;
+}
+
+button {
+    border-radius: 5px;
+    background-color: blue;
+    color: yellow;
+    width: 15vw;
+    height: 3vw;
+    cursor: pointer;
+}
+
+.add_palmares {
+    margin-top: 25px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+}
+
+#setRealisation {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#button_valid {
+    align-self: center;
+    margin-bottom: 25px;
+}
+
+.button_crud {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media (min-width:426px) {
+
+    #burger,
+    #cross {
+        display: none;
+    }
+}
+
+@media (max-width:426px) {
+    .head_mobile {
+        display: block;
+    }
+
+    .main,
+    #routes {
+        flex-direction: column;
+    }
+
+    #routes {
+        display: none;
+        align-self: center;
+        width: 100%;
+    }
+
+    .route {
+        width: 100%;
+        height: 20vw;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .titre,
+    #burger,
+    #cross {
+        justify-self: center;
+    }
+
+    #burger {
+        display: block;
+    }
+
+    .logo {
+        width: 15vw;
+        height: auto;
+    }
+
+    #logo {
+        width: 100%;
+        height: 100%;
+    }
+
+    #logo_accueil,
+    .subtitle_accueil {
+        display: none;
+    }
+
+    .a_propos {
+        flex-direction: column;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+        align-self: center;
+    }
+
+    #illustration_a_propos {
+        width: 100%;
+    }
+
+    .titre_partie {
+        font-size: 23px;
+    }
+
+    #text_a_propos {
+        font-size: 15px;
+    }
+
+    .redirects {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .categorie {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .pseudo {
+        font-size: 15px;
+    }
+
+    .palmares {
+        align-items: flex-start;
+        text-align: start;
+    }
+
+    .realisations {
+        margin-left: 25px;
+    }
+
+    .contact_container {
+        flex-direction: column;
+    }
+
+    .profile_picture_contact {
+        width: 15vw;
+        height: 15vw;
+    }
+
+    .text_contact {
+        font-size: 20px;
+    }
+
+    button {
+        width: 35vw;
+        height: 10vw;
+    }
+
+    .add_palmares {
+        width: 50vw;
+    }
+}

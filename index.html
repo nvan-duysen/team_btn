@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team BTN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <noscript>
+        <style>
+            div {
+                display: none
+            }
+        </style>
+    </noscript>
+</head>
+
+<body>
+    <noscript>Merci de bien vouloir activer Javascript !</noscript>
+    <div class="container">
+        <div class="navbar">
+            <div class="main">
+                <div class="responsive">
+                    <div id="burger" onclick="showNavbar()">
+                        <img src="./assets/navbar/burger.png">
+                    </div>
+                    <div id="cross" onclick="hideNavbar()">
+                        <img src="./assets/navbar/cross.png">
+                    </div>
+                    <div class="titre">
+                        Team BTN
+                    </div>
+                    <div class="logo">
+                        <img id="logo" src="./assets/navbar/btn.png">
+                    </div>
+                </div>
+                <div id="routes">
+                    <div class="route" id="accueil">
+                        <div class="route_name">Accueil</div>
+                    </div>
+                    <div class="route" id="equipe">
+                        <div class="route_name">L'Équipe</div>
+                    </div>
+                    <div class="route" id="tournois">
+                        <div class="route_name">Palmarès</div>
+                    </div>
+                    <div class="route" id="contact">
+                        <div class="route_name">Contact</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="accueil_body" class="subcontainer show">
+            <div class="head_mobile titre_partie">ACCUEIL</div>
+            <video autoplay muted loop id="myVideo">
+                <source src="./assets/accueil/rl_background.mp4" type="video/mp4">
+            </video>
+            <div class="foreground">
+                <img src="./assets/accueil/btn.png" class="animation to_left" id="logo_accueil">
+                <div class="titres_accueil animation to_right">
+                    <h1 class="title_accueil">BRING THE NIGHTMARES</h1>
+                    <h2 class="subtitle_accueil">#WeAreNightmares</h2>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <p class="button"><button id="button_video" type="button" onclick="getStream('video')">NE PAS
+                            CLIQUER</button></p>
+                </div>
+            </div>
+            <div class="a_propos">
+                <div class="animation to_left left">
+                    <img id="illustration_a_propos" src="./assets/accueil/bg_accueil.png">
+                </div>
+                <div class="animation to_right right">
+                    <div class="titre_partie titre_droite">A propos</div>
+                    <p id="text_a_propos">La Team BTN est une structure e-sport créée le 24 juin 2022 par Nicolas
+                        Van-Duysen alias VodaX.
+                        Ayant commencé avec deux joueurs Rocket League, la structure est maintenant représentée sur
+                        trois jeux,
+                        Rocket League, Teamfight Tactics et League of Legends, avec près d'une dizaine de joueurs
+                        cumulés sous la bannière
+                        de la Team BTN. </p>
+                </div>
+            </div>
+            <div class="equipe animation to_display">
+                <div class="titre_partie">L'Équipe</div>
+                <div class="redirects">
+                    <div class="categorie" onClick="redirect_team('admin')">
+                        <div class="admin"><img class="equipe_img" src="./assets/team/admin.jpg"></div>
+                        <div class="text">Administration</div>
+                    </div>
+                    <div class="categorie" onClick="redirect_team('rl')">
+                        <div class="rocket_league"><img class="equipe_img" src="./assets/team/rocket_league.jpg"></div>
+                        <div class="text">Rocket League</div>
+                    </div>
+                    <div class="categorie" onClick="redirect_team('tft')">
+                        <div class="tft"><img class="equipe_img" src="./assets/team/tft.jpg"></div>
+                        <div class="text">Teamfight Tactics</div>
+                    </div>
+                    <div class="categorie" onClick="redirect_team('lol')">
+                        <div class="lol"><img class="equipe_img" src="./assets/team/lol.jpg"></div>
+                        <div class="text">League of Legends</div>
+                    </div>
+                    <div class="categorie" onClick="redirect_team('partenariat')">
+                        <div class="partenariat"><img class="equipe_img" src="./assets/team/handshake.jpg"></div>
+                        <div class="text">Partenariat</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="equipe_body" class="subcontainer hide">
+            <div class="head_mobile titre_partie">EQUIPE</div>
+            <div class="equipe_admin" id="admin">
+                <div class="titre_partie">Administration</div>
+                <div class="membres admin">
+                    <div class="vodax joueur animation to_display"
+                        onclick="window.open('https://twitch.tv/vodax', '_blank')">
+                        <img src="./assets/profile_pictures/vodax.png"
+                            class="link profile_picture">
+                        <div class="text_player">VodaX</div>
+                        <div class="text_player">Fondateur</div>
+                    </div>
+                    <div class="aptac joueur animation to_display">
+                        <img src="./assets/profile_pictures/aptac.png"
+                            class="profile_picture">
+                        <div class="text_player">Aptac</div>
+                        <div class="text_player">Graphiste</div>
+                    </div>
+                </div>
+            </div>
+            <div class="equipe_rl" id="rl">
+                <div class="titre_partie">Rocket League</div>
+                <div class="membres rocket_league_1">
+                    <div class="ben2o joueur animation to_display">
+                        <img src="./assets/profile_pictures/ben2o.png"
+                            class="profile_picture">
+                        <div class="text_player">Ben2o</div>
+                        <div class="text_player">Capitaine</div>
+                    </div>
+                    <div class="knockola joueur animation to_display">
+                        <img src="./assets/profile_pictures/knockola.png"
+                            class="profile_picture">
+                        <div class="text_player">Knockola</div>
+                        <div class="text_player">Joueur</div>
+                    </div>
+                    <div class="fr1zixx joueur animation to_display">
+                        <img src="./assets/profile_pictures/fr1zixx.png"
+                            class="profile_picture">
+                        <div class="text_player">Fr1ziXx</div>
+                        <div class="text_player">Joueur</div>
+                    </div>
+                    <div class="salax joueur animation to_display">
+                        <img src="./assets/profile_pictures/salax.png"
+                            class="profile_picture">
+                        <div class="text_player">Salax</div>
+                        <div class="text_player">Joueur</div>
+                    </div>
+                </div>
+                <div class="membres rocket_league_2">
+                    <div class="ropsy joueur animation to_display">
+                        <img src="./assets/profile_pictures/ropsy.png"
+                            class="profile_picture">
+                        <div class="text_player">Ropsy</div>
+                        <div class="text_player">Capitaine</div>
+                    </div>
+                    <div class="zellveqq joueur animation to_display">
+                        <img src="./assets/profile_pictures/zellveqq.png"
+                            class="profile_picture">
+                        <div class="text_player">Zellveqq</div>
+                        <div class="text_player">Joueur</div>
+                    </div>
+                    <div class="easybye joueur animation to_display">
+                        <img src="./assets/profile_pictures/easybye.png"
+                            class="profile_picture">
+                        <div class="text_player">Easybye</div>
+                        <div class="text_player">Joueur</div>
+                    </div>
+                </div>
+            </div>
+            <div class="equipe_tft" id="tft">
+                <div class="titre_partie">Teamfight Tactics</div>
+                <div class="membres lol">
+                    <div class="bloodybread joueur animation to_display">
+                        <img src="./assets/profile_pictures/bloodybread.png"
+                            class="profile_picture">
+                        <div class="text_player">Bloodybread</div>
+                        <div class="text_player">Capitaine</div>
+                    </div>
+                </div>
+            </div>
+            <div class="equipe_lol" id="lol">
+                <div class="titre_partie">League of Legends</div>
+                <div class="membres lol">
+                    <div class="reavolt joueur animation to_display">
+                        <img src="./assets/profile_pictures/reavolt.png"
+                            class="profile_picture">
+                        <div class="text_player">Reavolt</div>
+                        <div class="text_player">Capitaine</div>
+                    </div>
+                    <div class="kikor27 joueur animation to_display">
+                        <img src="./assets/profile_pictures/kikor27.png"
+                            class="profile_picture">
+                        <div class="text_player">Kikor27</div>
+                        <div class="text_player">Joueur</div>
+                    </div>
+                </div>
+            </div>
+            <div class="partenariat" id="partenariat">
+                <div class="titre_partie palmares_titre">Partenariat</div>
+                <div class="membres partenariat">
+                    <div class="reqta joueur animation to_display"
+                        onclick="window.open('https://www.twitch.tv/btn_reqta', '_blank')">
+                        <img src="./assets/profile_pictures/reqta.png"
+                            class="link profile_picture">
+                        <div class="text_player">Reqta</div>
+                        <div class="text_player">Partenaire</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tournois_body" class="subcontainer hide">
+            <div class="head_mobile titre_partie">PALMARES</div>
+            <div class="rocket_league palmares">
+                <div class="titre_partie palmares_titre">Rocket League :</div>
+                <div class="palmares_liste">
+                    <div class="players">
+                        <div class="ben2o joueur">
+                            <img src="./assets/profile_pictures/ben2o.png"
+                                class="profile_picture_palmares">
+                            <div class="text_player">Ben2o</div>
+                        </div>
+                        <div class="and titre_partie">ET</div>
+                        <div class="knockola joueur">
+                            <img src="./assets/profile_pictures/knockola.png"
+                                class="profile_picture_palmares">
+                            <div class="text_player">Knockola</div>
+                        </div>
+                    </div>
+                    <div class="realisations" id="ben2o_knockola_data">
+                        <div class="realisation"><strong>05/07/2022 : 3ème position au tournoi "Discord Gaming - Rocket
+                                Duos"</strong></div>
+                    </div>
+                    <div class="players">
+                        <div class="ropsy joueur">
+                            <img src="./assets/profile_pictures/ropsy.png"
+                                class="profile_picture_palmares">
+                            <div class="text_player">Ropsy</div>
+                        </div>
+                        <div class="and titre_partie">ET</div>
+                        <div class="salax joueur">
+                            <img src="./assets/profile_pictures/salax.png"
+                                class="profile_picture_palmares">
+                            <div class="text_player">Salax</div>
+                        </div>
+                    </div>
+                    <div class="realisations" id="ropsy_salax_data">
+                        <div class="realisation"><strong>09/07/2022 : 3ème position au tournoi "Discord France - Nitro
+                                Week-end"</strong></div>
+                        <div class="realisation">25/07/2022 : 5ème position au tournoi "Discord France - Nitro Week-End"
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="teamfight_tactics palmares">
+                <div class="titre_partie">Teamfight Tactics :</div>
+                <div class="palmares_liste">
+                    <div class="players">
+                        <div class="bloodybread joueur">
+                            <img src="./assets/profile_pictures/bloodybread.png"
+                                class="profile_picture_palmares">
+                            <div class="text_player">Bloodybread</div>
+                        </div>
+                    </div>
+                    <div class="realisations" id="bloodybread_data">
+                        <div class="realisation">29/06/2022 : 5ème position au tournoi "Discord France - Gizmo Time"
+                        </div>
+                        <div class="realisation"><strong>04/07/2022 : 1ère position au tournoi "Discord France - Gizmo
+                                Time"</strong></div>
+                        <div class="realisation">09/07/2022 : 2ème position au tournoi "Discord France - TFT Week-end"
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="add_palmares">
+                <select onChange="resetInput()" id="select_joueur">
+                    <option id="ben2o_knockola">Ben2o et Knockola</option>
+                    <option id="ropsy_salax">Ropsy et Salax</option>
+                    <option id="bloodybread">Bloodybread</option>
+                </select>
+                <input type="text" id="setRealisation" onInput="handleChangeInput(this)">
+                <button id="button_valid" onClick="validateInput()">Valider</button>
+            </div>
+        </div>
+        <div id="contact_body" class="subcontainer hide">
+            <div class="head_mobile titre_partie titre_contact">CONTACT</div>
+            <div class="contact_container">
+                <div class="discord contact animation to_left">
+                    <a href="https://discord.gg/Ed22CSyuBK" target="_blank">
+                        <img src="./assets/contact/discord.png" class="profile_picture_contact">
+                        <div class="text_contact discord">Discord</div>
+                    </a>
+                </div>
+                <div class="twitter contact animation to_left">
+                    <a href="https://twitter.com/btn_team" target="_blank">
+                        <img src="./assets/contact/twitter.png" class="profile_picture_contact">
+                        <div class="text_contact twitter">Twitter</div>
+                    </a>
+                </div>
+                <div class="mail contact animation to_left">
+                    <a href="mailto:btnteamoff@gmail.com" target="_blank">
+                        <img src="./assets/contact/mail.png" class="profile_picture_contact">
+                        <div class="text_contact mail">Mail</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
